@@ -15,17 +15,18 @@ router.get('/notes', (req, res) => {
 router.post("/notes",  (req, res) =>{
     storage
     .addNote()(req.body)
-    .then((notes) => {
-        return res.json(notes)
-
+    .then((note) => {
+    return res.json(note)
     }).catch(err => res.status(500).json(err))
 });
 
 
 // delete
-router.delete("/notes/:title", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
     storage
-        .removeNote()(req.params.title)
+        .removeNote()(req.params.id)
         .then(() => res.json({ ok: true }))
         .catch(err => res.status(500).json(err))
 });
+
+module.exports = router;
