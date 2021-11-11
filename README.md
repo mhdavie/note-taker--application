@@ -47,5 +47,10 @@ The purpose of this project was to build an application that can write, save, an
 
 ## Application 
 
-![]()
+![](Assets/notetaker.png)
+
+![](Assets/example.png)
+
+
+
 
