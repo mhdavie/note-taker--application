@@ -14,7 +14,7 @@ router.get('/notes', (req, res) => {
 
 router.post("/notes",  (req, res) =>{
     storage
-    .addNote()(req.body)
+    .addNote(req.body)
     .then((note) => {
     return res.json(note)
     }).catch(err => res.status(500).json(err))
@@ -24,7 +24,7 @@ router.post("/notes",  (req, res) =>{
 // delete
 router.delete("/notes/:id", (req, res) => {
     storage
-        .removeNote()(req.params.id)
+        .removeNote(req.params.id)
         .then(() => res.json({ ok: true }))
         .catch(err => res.status(500).json(err))
 });
